@@ -141,19 +141,19 @@ consectetur adipiscing''',
             width: 328,
             height: 56,
           ),
-          BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
-            if (state is AuthLoggedOutState) {
-              Navigator.popUntil(context, (route) => route.isFirst);
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (ctx) => const HomeScreen()));
-            }
-          }, builder: (context, state) {
-            return TextButton(
-                onPressed: () {
-                  BlocProvider.of<AuthCubit>(context).logOut();
-                },
-                child: const Text("Logout"));
-          }),
+          // BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
+          //   if (state is AuthLoggedOutState) {
+          //     Navigator.popUntil(context, (route) => route.isFirst);
+          //     Navigator.of(context).pushReplacement(
+          //         MaterialPageRoute(builder: (ctx) => const HomeScreen()));
+          //   }
+          // }, builder: (context, state) {
+          //   // return TextButton(
+          //   //     onPressed: () {
+          //   //       BlocProvider.of<AuthCubit>(context).logOut();
+          //   //     },
+          //   //     // child: const Text("Logout"));
+          // }),
         ],
       )),
     );
