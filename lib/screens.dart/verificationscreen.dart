@@ -88,7 +88,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 ),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    String phoneNumber = '+91' + widget.mobileNumber;
+
+                    BlocProvider.of<AuthCubit>(context).sendOtp(phoneNumber);
+                  },
                   child: const Text(
                     "Request Again",
                     style: TextStyle(
